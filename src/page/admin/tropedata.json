@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "tropeName": "Found Family",
+    "isSpoiler": "No",
+    "tropeDescription": "The main characters form deep, familial bonds with friends or companions. The main characters form deep, familial bonds with friends or companions.vThe main characters form deep, familial bonds with friends or companions."
+  },
+  {
+    "id": "2",
+    "tropeName": "Reluctant Hero",
+    "isSpoiler": "Yes",
+    "tropeDescription": "The protagonist is unwilling to embrace their role as a hero initially."
+  },
+  {
+    "id": "3",
+    "tropeName": "Time Loop",
+    "isSpoiler": "No",
+    "tropeDescription": "Events within the narrative repeat themselves in a cyclical manner."
+  },
+  {
+    "id": "4",
+    "tropeName": "Hidden Villain",
+    "isSpoiler": "Yes",
+    "tropeDescription": "The true antagonist's identity is concealed until a pivotal moment."
+  }
+]
