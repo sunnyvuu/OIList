@@ -1,9 +1,21 @@
+import { useEffect, useState } from "react";
+import { getTropes } from "../../services/trope.service";
 import TropeItem from "./components/TropeItem";
+import Button from "../../shared-components/Button";
+import { Trope } from "../../interfaces/trope";
 import "./AdminPage.css";
-import data from "./tropedata.json";
-import Button from "../../components/Button";
 
 function AdminPage() {
+  const [data, setData] = useState<Trope[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const tropeData = await getTropes();
+      setData(tropeData);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <h2> ADMIN PORTAL </h2>
@@ -27,12 +39,12 @@ function AdminPage() {
           </thead>
           <tbody>
             {/* Map through your data and create a row for each item */}
-            {data.map((item, index) => (
+            {data.map((item, id) => (
               <TropeItem
-                key={index}
-                tropeName={item.tropeName}
-                isSpoiler={item.isSpoiler}
-                tropeDescription={item.tropeDescription}
+                key={id}
+                name={item.name}
+                is_spoiler={item.is_spoiler}
+                description={item.description}
               />
             ))}
           </tbody>
