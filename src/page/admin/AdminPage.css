@@ -1,90 +1,51 @@
-.table-responsive {
-  width: 65%;
-  table-layout: fixed;
-  border-radius: 100rem;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 1rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.table-responsive tbody tr:nth-child(even) {
-  background-color: rgb(247, 246, 246);
-}
-
-.table-responsive thead tr:first-child th:first-child {
-  border-top-left-radius: 1rem;
-}
-
-.table-responsive thead tr:last-child th:last-child {
-  border-top-right-radius: 1rem;
-}
-
-.table-responsive tbody tr:last-child td:last-child,
-.table-responsive tfoot tr:last-child th:first-child {
-  border-bottom-left-radius: 8px;
-}
-
-.table-responsive tbody tr:last-child td:last-child,
-.table-responsive tfoot tr:last-child th:last-child {
-  border-bottom-right-radius: 8px;
-}
-
-.tropeItem th,
-.tropeItem td {
-  padding: 0.5rem;
-  text-align: left;
-  vertical-align: top;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-.select-box {
-  width: 5%;
-}
-
-.trope-name {
-  width: 25%;
-}
-
-.is-spoiler {
-  width: 5%;
-}
-
-.trope-descript {
-  width: 55%;
-}
-
-.tropeItem tr {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.table-responsive th {
-  background-color: rgb(250, 225, 225);
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  text-align: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.table-responsive td {
-  padding: 1rem;
-}
-
-.select-box td {
-  align-items: center;
-  vertical-align: top;
-}
-
-.table-responsive th {
-  font-weight: 800;
-  font-size: 1.1rem;
+.admin-pg {
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 .btns {
   display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.admin-body {
+  display: flex;
+}
+.trope-form {
+  width: 500px;
+  max-width: 650px;
+  padding: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c47a7a;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-title,
+.table-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.form-btns {
+  margin-top: 1rem;
+  display: flex;
   gap: 1rem;
-  margin: 1rem;
+  justify-content: flex-end;
+}
+
+.spoiler {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
 }
