@@ -10,8 +10,10 @@ import { Fade } from "@mui/material";
 
 import "../AdminPage.css";
 import Btn from "../../../shared-components/Button";
-
-function AddTropeForm() {
+interface buttonProps {
+  onClick: () => void;
+}
+function AddTropeForm(props: buttonProps) {
   const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
@@ -19,6 +21,14 @@ function AddTropeForm() {
       maxWidth: 150,
     },
   });
+
+  //   const handleAddClick = () => {
+  //     console.log("Add button clicked");
+  //   };
+
+  const handleDeleteClick = () => {
+    console.log("Delete button clicked");
+  };
 
   return (
     <div className="trope-form">
@@ -61,8 +71,8 @@ function AddTropeForm() {
         </div>
 
         <div className="form-btns">
-          <Btn value={"Cancel"} />
-          <Btn value={"Save"} />
+          <Btn value={"Cancel"} onClick={props.onClick} />
+          <Btn value={"Save"} onClick={handleDeleteClick} />
         </div>
       </FormControl>
     </div>
