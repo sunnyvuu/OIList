@@ -10,10 +10,17 @@ import { Fade } from "@mui/material";
 
 import "../AdminPage.css";
 import Btn from "../../../shared-components/Button";
+import { useState } from "react";
+
 interface buttonProps {
   onClick: () => void;
 }
-function AddTropeForm(props: buttonProps) {
+
+function AddTropeForm(this: any, props: buttonProps) {
+  const [tropeName, setTropeName] = useState("");
+  const [isSpoilerTrope, setIsSpoilerTrope] = useState(false);
+  const [tropeDescript, setTropeDescript] = useState("");
+
   const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
@@ -22,12 +29,25 @@ function AddTropeForm(props: buttonProps) {
     },
   });
 
-  //   const handleAddClick = () => {
-  //     console.log("Add button clicked");
-  //   };
+  const handleSubmit = async () => {
+    const formData = {
+      name: tropeName,
+      description: tropeDescript,
+      is_spoiler: isSpoilerTrope,
+    };
 
-  const handleDeleteClick = () => {
-    console.log("Delete button clicked");
+    console.log("Submitting Form Data:", formData);
+
+    try {
+      alert("Data submitted successfully!");
+
+      setTropeName("");
+      setTropeDescript("");
+      setIsSpoilerTrope(false);
+    } catch (error) {
+      console.error("Failed to submit data: ", error);
+      alert("Failed to submit data.");
+    }
   };
 
   return (
@@ -42,6 +62,8 @@ function AddTropeForm(props: buttonProps) {
           fullWidth
           margin="normal"
           style={{ width: 250, marginBottom: 25 }}
+          onChange={(e) => setTropeName(e.target.value)}
+          value={tropeName}
         />
         <FormLabel>Description</FormLabel>
         <TextField
@@ -51,6 +73,8 @@ function AddTropeForm(props: buttonProps) {
           fullWidth
           margin="normal"
           style={{ marginBottom: 25 }}
+          onChange={(e) => setTropeDescript(e.target.value)}
+          value={tropeDescript}
         />
 
         <div className="spoiler">
@@ -66,13 +90,17 @@ function AddTropeForm(props: buttonProps) {
           </CustomWidthTooltip>
 
           <FormGroup>
-            <Checkbox defaultChecked />
+            <Checkbox
+              defaultChecked
+              onChange={(e) => setIsSpoilerTrope(e.target.checked)}
+              value={isSpoilerTrope}
+            />
           </FormGroup>
         </div>
 
         <div className="form-btns">
           <Btn value={"Cancel"} onClick={props.onClick} />
-          <Btn value={"Save"} onClick={handleDeleteClick} />
+          <Btn value={"Save"} onClick={handleSubmit} />
         </div>
       </FormControl>
     </div>
