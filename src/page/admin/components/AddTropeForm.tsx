@@ -11,6 +11,8 @@ import { Fade } from "@mui/material";
 import "../AdminPage.css";
 import Btn from "../../../shared-components/Button";
 import { useState } from "react";
+import { postTrope } from "../../../services/trope.service";
+import { Trope } from "../../../interfaces/trope";
 
 interface buttonProps {
   onClick: () => void;
@@ -30,7 +32,7 @@ function AddTropeForm(this: any, props: buttonProps) {
   });
 
   const handleSubmit = async () => {
-    const formData = {
+    const formData: Trope = {
       name: tropeName,
       description: tropeDescript,
       is_spoiler: isSpoilerTrope,
@@ -39,6 +41,14 @@ function AddTropeForm(this: any, props: buttonProps) {
     console.log("Submitting Form Data:", formData);
 
     try {
+      const result = await postTrope(formData);
+      if (result) {
+        alert("Trope added successfully!");
+        // Reset form or handle success
+      } else {
+        alert("Failed to add trope.");
+        // Handle error
+      }
       alert("Data submitted successfully!");
 
       setTropeName("");
