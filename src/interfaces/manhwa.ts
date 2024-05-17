@@ -10,5 +10,4 @@ export interface Manhwa {
 export interface ManhwaCard {
   title: string;
   img_url: string;
-  synopsis: string;
 }
