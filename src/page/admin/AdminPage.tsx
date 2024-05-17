@@ -15,14 +15,6 @@ function AdminPage() {
     }
   }
 
-  //   const handleDeleteClick = () => {
-  //     console.log("Delete button clicked");
-  //   };
-
-  //   const handleEditClick = () => {
-  //     console.log("Edit button clicked");
-  //   };
-
   return (
     <div className="admin-pg">
       <h2> ADMIN PORTAL </h2>
@@ -35,8 +27,6 @@ function AdminPage() {
             <div className="btns">
               {" "}
               <Button value={"Add Trope"} onClick={handleViewAddTrope} />
-              {/* <Button value={"Delete Trope(s)"} onClick={handleDeleteClick} />
-              <Button value={"Edit Trope"} onClick={handleEditClick} /> */}
             </div>
           </div>
           <TropeTable />
