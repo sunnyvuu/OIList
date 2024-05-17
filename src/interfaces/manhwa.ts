@@ -6,3 +6,9 @@ export interface Manhwa {
   authors: string;
   serialization: string;
 }
+
+export interface ManhwaCard {
+  title: string;
+  img_url: string;
+  synopsis: string;
+}
